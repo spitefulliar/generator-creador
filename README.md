@@ -1,13 +1,15 @@
 # Yeoman generator for react component + css-modules/sass generating
 
 ## Install
+
 1. Run `npm install generator-creador`
-2. Go to your components folder
-3. Run `yo creador` and follow the instructions
-4. Have fun
+1. Go to your components folder
+1. Run `yo creador` and follow the instructions
+1. Have fun
 
-## Output:
-  /component
+## Output
 
-  - /component.js
-  - /compontnet.sass
+/component
+
+- /component.js
+- /compontnet.sass
