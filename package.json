@@ -17,7 +17,7 @@
     "yeoman-generator"
   ],
   "author": "spitefulliar",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Spitefulliar/generator-creador/issues"
   },
