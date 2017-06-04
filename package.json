@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/Spitefulliar/generator-creador.git"
   },
+  "files": [
+    "generators"
+  ],
   "keywords": [
     "yeoman-generator"
   ],
@@ -18,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/Spitefulliar/generator-creador/issues"
   },
-  "homepage": "https://github.com/Spitefulliar/generator-creador#readme"
+  "homepage": "https://github.com/Spitefulliar/generator-creador#readme",
+  "dependencies": {
+    "yeoman-generator": "^1.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1"
+  }
 }
