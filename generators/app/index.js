@@ -1,12 +1,11 @@
 const Generator = require('yeoman-generator')
+const chalk = require('chalk');
 
 module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
 
-    this.log('')
     this.component = {}
-
     this.option('babel') // This method adds support for a `--babel` flag
   }
 
@@ -14,11 +13,11 @@ module.exports = class extends Generator {
     return this.prompt([{
       type    : 'input',
       name    : 'name',
-      message : 'Name your component:',
+      message : chalk.magenta(`${String.fromCodePoint('0x1F984')} Name your component:`),
       default : `component${Math.floor(Math.random()*100)}` // Default to current folder name
     }]).then((answers) => {
       this.component.name = answers.name
-      this.log(`${String.fromCodePoint('0x23EC')}`);
+      this.log(`${String.fromCodePoint('0x1F447')}`);
       this._promptingNameConfirm()
     });
   }
@@ -27,16 +26,16 @@ module.exports = class extends Generator {
     return this.prompt([{
       type    : 'confirm',
       name    : 'nameConfirmed',
-      message : `Would you like to keep the name "${this.component.name}"?`
+      message : chalk.magenta(`Would you like to keep the name "${this.component.name}"?`)
     }]).then((answers) => {
       if (!answers.nameConfirmed) {
-        this.log('Let\'s start again')
+        this.log(`Let\'s start again ${String.fromCodePoint('0x1F501')}`)
         this.promptingName()
         return
       }
-      this.log(`Cool ${String.fromCodePoint('0x2705')}`);
-      this.log('Your component\'s name is:', this.component.name)
-      this.log(`${String.fromCodePoint('0x23EC')}`);
+      this.log(chalk.magenta(`Cool ${String.fromCodePoint('0x2714')}`));
+      this.log(chalk.green('Your component\'s name is:', this.component.name))
+      this.log(`${String.fromCodePoint('0x1F447')}`);
 
       this._promptingSmart()
     });
@@ -46,10 +45,10 @@ module.exports = class extends Generator {
     return this.prompt([{
       type    : 'confirm',
       name    : 'dumb',
-      message : 'Is it a dumb component?'
+      message : chalk.magenta('Is it a dumb component?')
     }]).then((answers) => {
       this.component.dumb = answers.dumb
-      this.log(`Writing... ${String.fromCodePoint('0x1F4BE')}`);
+      this.log(chalk.magenta(`Writing... ${String.fromCodePoint('0x1F4DD')}`));
       this._writing()
     });
   }
@@ -74,6 +73,6 @@ module.exports = class extends Generator {
   }
 
   _end() {
-    this.log(`All set! ${String.fromCodePoint('0x1F378')}`)
+    this.log(chalk.green(`All set! ${String.fromCodePoint('0x1F378')}`))
   }
 }
