@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'react-proptypes'
+import PropTypes from 'prop-types'
 import css from './<%= name %>.sass'
 
 export default class <%= name %> extends Component {
