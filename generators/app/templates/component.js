@@ -6,7 +6,7 @@ export default class <%= name %> extends Component {
   render () {
     const {
       children
-    } = props
+    } = this.props
 
     return (
       <div className={css.root}>
