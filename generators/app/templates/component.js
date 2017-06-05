@@ -5,23 +5,23 @@ import css from './<%= name %>.sass'
 export default class <%= name %> extends Component {
   render () {
     const {
-      content
+      children
     } = props
 
     return (
       <div className={css.root}>
-        {content}
+        {children}
       </div>
     )
   }
 }
 
 const {
-  string
+  node
 } = PropTypes
 
 <%= name %>.propTypes = {
-  content: string
+  children: node
 }
 
 
