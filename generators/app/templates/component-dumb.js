@@ -1,26 +1,25 @@
 import React from 'react'
-import PropTypes from 'react-proptypes'
+import PropTypes from 'prop-types'
 import css from './<%= name %>.sass'
 
 const <%= name %> = props => {
   const {
-    content
+    children
   } = props
 
   return (
     <div className={css.root}>
-      {content}
+      {children}
     </div>
   )
 }
 
 const {
-  string
+  node
 } = PropTypes
 
 <%= name %>.propTypes = {
-  content: string
+  children: node
 }
 
 export default <%= name %>
-
