@@ -23,5 +23,3 @@ const {
 <%= name %>.propTypes = {
   children: node
 }
-
-
