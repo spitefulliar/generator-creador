@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as <%= rootName %>ActionCreators from 'actions/<%= rootName %>ActionCreators'
+import * as <%= rootNameLower %>ActionCreators from 'actions/<%= rootNameLower %>ActionCreators'
 
 import <%= rootName %> from 'components/<%= rootName %>/<%= rootName %>'
 
@@ -18,6 +18,6 @@ export default connect(
     }
   },
   dispatch => ({
-    actions: bindActionCreators(<%= rootName %>ActionCreators, dispatch)
+    actions: bindActionCreators(<%= rootNameLower %>ActionCreators, dispatch)
   })
 )(<%= rootName %>)
