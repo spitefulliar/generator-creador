@@ -2,7 +2,13 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import css from './<%= name %>.sass'
 
-export default class <%= name %> extends Component {
+class <%= name %> extends Component {
+  constructor () {
+    super(...arguments)
+
+    this.state = {}
+  }
+
   render () {
     const {
       children
@@ -23,3 +29,5 @@ const {
 <%= name %>.propTypes = {
   children: node
 }
+
+export default <%= name %>
