@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 
 import css from './<%= name %>.sass'
 
+import AppHeader from 'containers/AppHeaderContainer/AppHeaderContainer'
+import AppFooter from 'containers/AppFooterContainer/AppFooterContainer'
+
 class <%= name %> extends Component {
   constructor () {
     super()
@@ -10,25 +13,35 @@ class <%= name %> extends Component {
     this.state = {}
   }
 
+  componentWillMount () {
+    // this.props.fetchData()
+  }
+
   render () {
     const {
-      children
+      history,
+      match: { params }
     } = this.props
 
     return (
       <div className={css.root}>
-        {children}
+        <AppHeader />
+
+        {/* insert content */}
+
+        <AppFooter />
       </div>
     )
   }
 }
 
 const {
-  node
+  object
 } = PropTypes
 
 <%= name %>.propTypes = {
-  children: node
+  match: object.isRequired,
+  history: object.isRequired
 }
 
 export { <%= name %> }

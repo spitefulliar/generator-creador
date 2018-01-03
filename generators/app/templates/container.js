@@ -1,21 +1,25 @@
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import * as <%= rootNameLower %>ActionCreators from 'actions/<%= rootNameLower %>ActionCreators'
+import { withRouter } from 'react-router-dom'
 
-import <%= rootName %> from 'components/<%= rootName %>/<%= rootName %>'
+import withHelmet from 'containers/BaseHelmet/BaseHelmet'
+import actions from 'actions/<%= actionsName %>'
 
-export default connect(
-  ({ <%= rootName %>Store }) => {
-    const data = <%= rootName %>.toJSON()
+import { <%= rootName %> } from 'components/<%= rootName %>/<%= rootName %>'
+
+const <%= name %> = withRouter(withHelmet(connect(
+  ({ <%= rootNameStartsLow %>Store }) => {
     const {
       something
-    } = data
+    } = <%= rootNameStartsLow %>Store
 
     return {
       something
     }
   },
-  dispatch => ({
-    actions: bindActionCreators(<%= rootNameLower %>ActionCreators, dispatch)
-  })
-)(<%= rootName %>)
+  {...actions.<%= rootNameStartsLow %>}
+)(<%= rootName %>)))
+
+export { <%= name %> }
+
+/* Default exports will be deprecated soon, use named exports instead */
+export default <%= name %>

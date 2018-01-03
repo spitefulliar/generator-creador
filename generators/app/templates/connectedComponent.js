@@ -1,21 +1,17 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+
 import css from './<%= name %>.sass'
-import { Helmet } from 'react-helmet'
-import { getDefaultPageSchema } from 'lib/jsonld'
 
-import AppHeader from 'containers/AppHeaderContainer/AppHeaderContainer'
-import AppFooter from 'containers/AppFooterContainer/AppFooterContainer'
-
-class <%= name %> extends Component {
+const <%= name %> extends Component {
   constructor () {
-    super(...arguments)
+    super()
 
     this.state = {}
   }
 
   componentWillMount () {
-    this.props.actions.load()
+    // this.props.fetchData()
   }
 
   render () {
@@ -25,16 +21,8 @@ class <%= name %> extends Component {
     } = this.props
 
     return (
-      <div>
-        <Helmet>
-          <title></title>
-          <meta name='description' content='' />
-          <script type='application/json+ld'>{getDefaultPageSchema()}</script>
-        </Helmet>
-        <div className={css.root}>
-          <AppHeader />
-          <AppFooter />
-        </div>
+      <div className={css.root}>
+        {/* insert content */}
       </div>
     )
   }
@@ -46,8 +34,10 @@ const {
 
 <%= name %>.propTypes = {
   match: object.isRequired,
-  history: object.isRequired,
-  actions: object.isRequired
+  history: object.isRequired
 }
 
+export { <%= name %> }
+
+/* Default exports will be deprecated soon, use named exports instead */
 export default <%= name %>
