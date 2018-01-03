@@ -17,7 +17,7 @@ In general every command consists of desired file's/component's type and name (o
 `yo creador [component | container | connected | connectedPage | actions | reducer | api] [<component name>]`
 
 | command | purpose |
-|---------|---------|
+|------------|---------|
 | `yo creador [component <component name>]` | Short command for creating a component (dumb or stateful) |
 | `yo creador container [<component name>]` | Create a container for connetion to Redux store (and also our custom BaseHelmet component) |
 | `yo creador connected [<component name>]` | Create a connected component |
@@ -31,18 +31,26 @@ In general every command consists of desired file's/component's type and name (o
 
 For any sort of components:
 
+```
 /<name>
 
 - /<name>.js
-- [/<name>.sass]
+[- /<name>.sass]
+```
 
 For the container:
 
+```
 /<name>Container
 
 - /<name>Container.js
-- [/<name>Container.sass]
+[- /<name>Container.sass]
+```
 
 Others:
+
+```
 /<name>ActionCreators.js
 /<name>Reducer.js
+/<name>Api.js
+```
