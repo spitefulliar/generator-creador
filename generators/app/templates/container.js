@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
 import withHelmet from 'containers/BaseHelmet/BaseHelmet'
-import actions from 'actions/<%= actionsName %>'
+import { <%= actionsName %> } from 'actions/<%= actionsName %>'
 
 import { <%= rootName %> } from 'components/<%= rootName %>/<%= rootName %>'
 
@@ -16,7 +16,7 @@ const <%= name %> = withRouter(withHelmet(connect(
       something
     }
   },
-  {...actions.<%= rootNameStartsLow %>}
+  { ...<%= actionsName %>.<%= rootNameStartsLow %> }
 )(<%= rootName %>)))
 
 export { <%= name %> }

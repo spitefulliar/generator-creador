@@ -1,7 +1,7 @@
 import { createActions } from 'redux-actions'
 
-import <%= apiName %> from 'api/<%= apiName %>'
-// import <%= apiName %> from 'api/fake/<%= apiName %>' // fake api for test purposes
+import { <%= apiName %> } from 'api/<%= apiName %>'
+// import { <%= apiName %> } from 'api/fake/<%= apiName %>' // fake api for test purposes
 
 const <%= name %> = createActions({
   <%= rootNameUpperLowDash %>: {
@@ -18,15 +18,15 @@ const {
   loadDataFail
 } = <%= name %>.<%= rootNameStartsLow %>
 
-<%= name %>.<%= rootNameStartsLow %>.fetchData = () => {
-  return async (dispatch, getState, { axios, getCSRFToken }) => {
+<%= name %>.<%= rootNameStartsLow %>.fetchData = () =>
+  async (dispatch, getState, { axios, getCSRFToken }) => {
     const response = await <%= apiName %>.get()
       .then(({ data }) => dispatch(loadDataSuccess(data)))
       .catch(error => dispatch(loadDataFail(error)))
 
     return response
   }
-}
+
 
 export { <%= name %> }
 

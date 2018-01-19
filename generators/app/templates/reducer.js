@@ -15,7 +15,7 @@ const <%= name %> = combineReducers({
   }, false),
   data: handleActions({
     [loadDataSuccess]: (state, { payload: { data } }) => data,
-    [loadDataFail]: () => {}
+    [loadDataFail]: () => ({})
   }, {})
 })
 

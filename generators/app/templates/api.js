@@ -1,9 +1,7 @@
 import fetcher from 'lib/fetcher'
 
-class <%= apiName %> {
-  get () {
-    return fetcher.get(`/api/<%= rootNameLower %>`)
-  }
+const <%= apiName %> = {
+  get = id => fetcher.get('/api/<%= rootNameLower %>')
 }
 
 export { <%= apiName %> }
