@@ -1,6 +1,6 @@
 {
   "name": "generator-creador",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Yeoman-generator for react components + css modules/sass, actions, reducer and api",
   "main": "index.js",
   "scripts": {
