@@ -19,12 +19,10 @@ const {
 } = <%= name %>.<%= rootNameStartsLow %>
 
 <%= name %>.<%= rootNameStartsLow %>.fetchData = () =>
-  (dispatch, getState, { axios, getCSRFToken }) => {
-    return <%= apiName %>.get()
+  return (dispatch, getState, { axios, getCSRFToken }) =>
+    <%= apiName %>.get()
       .then(({ data }) => dispatch(loadDataSuccess(data)))
       .catch(error => dispatch(loadDataFail(error)))
-  }
-
 
 export { <%= name %> }
 
