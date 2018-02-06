@@ -1,7 +1,7 @@
 import fetcher from 'lib/fetcher'
 
 const <%= apiName %> = {
-  get = id => fetcher.get('/api/<%= rootNameLower %>')
+  get: id => fetcher.get(`/api/<%= rootNameLower %>/${id}`)
 }
 
 export { <%= apiName %> }
